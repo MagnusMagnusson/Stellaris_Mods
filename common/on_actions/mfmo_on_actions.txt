@@ -1,0 +1,5 @@
+on_game_start = {
+	events = {
+		mfmo_game_start.1 
+	}
+}

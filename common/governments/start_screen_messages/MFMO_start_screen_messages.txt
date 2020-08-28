@@ -1,0 +1,8 @@
+part = {
+	location = 0
+	localization = "mfmo_START_SCREEN_SHOULDERS_OF_GIANTS"
+	
+	trigger = {
+		has_origin = mfmo_origin_raiders
+	}
+}
