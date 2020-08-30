@@ -14,6 +14,10 @@ mfmo_origin_raiders = {
 				value = ethic_militarist
 				value = ethic_fanatic_militarist
 			}
+			NOR={ 
+				value = ethic_xenophile
+				value = ethic_fanatic_xenophile
+			}
 		}
 		civics = {
 			OR={
@@ -23,7 +27,7 @@ mfmo_origin_raiders = {
 		}
 	}
 
-	description = mfo_origin_tooltip_raiders_effects
+	description = mfmo_origin_tooltip_raiders_effects
 	flags = { custom_start_screen }
 
 	traits = {

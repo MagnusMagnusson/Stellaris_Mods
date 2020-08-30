@@ -1,280 +1,492 @@
+# Fanatic_military
+# auth, materialist, xenophobe, spiritual 
+
 create_raider_member_1 = {
-	if = {
-		limit = { 
-			root = { has_spiritualist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = ethic_militarist
-				ethic = "ethic_spiritualist"
-				ethic = "ethic_fanatic_spiritualist"
+	random_list = {
+		1 = {#auth-warrior
+			modifier={
+				add = 2
+				root={
+					has_ethic = ethic_authoritarian
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_1
-				establish_communications_no_message = root
+			modifier = {
+				add = 3
+				root={
+					has_ethic = ethic_fanatic_authoritarian
+				}
 			}
-		}
-	}
-	else_if = {
-		limit = {
-			root = { has_militarist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = ethic_militarist
-				ethic = "ethic_fanatic_militarist"
-				ethic = "ethic_xenophobic"
+			modifier = {
+				add = 1
+				root={
+					has_civic = civic_warrior_culture
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_1
-				establish_communications_no_message = root
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_authoritarian	
+					ethic = ethic_fanatic_militarist
+				}
+				civics= {
+					civic = civic_warrior_culture
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_1
+					establish_communications_no_message = root
+				}
 			}
 		}
-	}
-	else_if = {
-		limit = { 
-			root = { has_materialist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = ethic_materialist
-				ethic = "ethic_fanatic_materialist"
-				ethic = "ethic_militarist"
+		1 = {#auth-despoiler
+			modifier={
+				add = 2
+				root={
+					has_ethic = ethic_authoritarian
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_1
-				establish_communications_no_message = root
+			modifier = {
+				add = 3
+				root={
+					has_ethic = ethic_fanatic_authoritarian
+				}
 			}
-		}
-	}
-	else_if = {
-		limit = { 
-			root = { has_materialist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = "ethic_authoritarian"
-				ethic = "ethic_fanatic_authoritarian"
-				ethic = "ethic_militarist"
+			modifier = {
+				add = 1
+				root={
+					has_civic = civic_barbaric_despoilers
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_1
-				establish_communications_no_message = root
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_authoritarian	
+					ethic = ethic_fanatic_militarist
+				}
+				civics= {
+					civic = civic_barbaric_despoilers
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_1
+					establish_communications_no_message = root
+				}
 			}
 		}
-	}
-	else_if = {
-		limit = { 
-			root = { is_egalitarian = yes }
-		}
-		limit = { 
-			root = { has_materialist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = "ethic_egalitarian"
-				ethic = "ethic_fanatic_egalitarian"
-				ethic = "ethic_militarist"
+		1 = {#materialist-warrior
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_warrior_culture
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_1
-				establish_communications_no_message = root
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_materialist
+					ethic = ethic_fanatic_militarist
+				}
+				civics= {
+					civic = civic_warrior_culture
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_1
+					establish_communications_no_message = root
+				}
 			}
 		}
-	}
-	else = {
-		create_country = {
-			name_list = random
-			species = event_target:fed_planet_1_species
-			type = default
-			origin = "origin_common_ground_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = "ethic_xenophile"
-				ethic = "ethic_xenophobe"
-				ethic = "ethic_fanatic_militarist"
+		1 = {#materialist-despoiler
+
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_barbaric_despoilers
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_1
-				establish_communications_no_message = root
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_materialist
+					ethic = ethic_fanatic_militarist
+				}
+				civics= {
+					civic = civic_barbaric_despoilers
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_1
+					establish_communications_no_message = root
+				}
+			}
+		}
+		1 = {#xenophobe-warrior
+
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_warrior_culture
+				}
+			}
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_xenophobe
+					ethic = ethic_fanatic_militarist
+				}
+				civics= {
+					civic = civic_warrior_culture
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_1
+					establish_communications_no_message = root
+				}
+			}
+		}
+		1 = {#auth-despoiler
+
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_barbaric_despoilers
+				}
+			}
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_authoritarian	
+					ethic = ethic_fanatic_xenophobe
+				}
+				civics= {
+					civic = civic_barbaric_despoilers
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_1
+					establish_communications_no_message = root
+				}
+			}
+		}
+		1 = {#spiritual-warrior
+
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_warrior_culture
+				}
+			}
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_spiritualist
+					ethic = ethic_fanatic_militarist
+				}
+				civics= {
+					civic = civic_warrior_culture
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_1
+					establish_communications_no_message = root
+				}
+			}
+		}
+		1 = {#auth-despoiler
+
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_barbaric_despoilers
+				}
+			}
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_spiritualist
+					ethic = ethic_fanatic_militarist
+				}
+				civics= {
+					civic = civic_barbaric_despoilers
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_1
+					establish_communications_no_message = root
+				}
 			}
 		}
 	}
 }
 
+
 create_raider_member_2 = {
-	if = {
-		limit = { 
-			root = { has_spiritualist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "mfmo_origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = ethic_militarist
-				ethic = "ethic_spiritualist"
-				ethic = "ethic_fanatic_spiritualist"
+	random_list = {
+		1 = {#auth-warrior
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_warrior_culture
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_2
-				establish_communications_no_message = root
-			}
-		}
-	}
-	else_if = {
-		limit = {
-			root = { has_militarist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "mfmo_origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = ethic_militarist
-				ethic = "ethic_fanatic_militarist"
-				ethic = "ethic_xenophobic"
-			}
-			effect = {
-				save_event_target_as = fed_member_2
-				establish_communications_no_message = root
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_fanatic_authoritarian	
+					ethic = ethic_militarist
+				}
+				civics= {
+					civic = civic_warrior_culture
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_2
+					establish_communications_no_message = root
+				}
 			}
 		}
-	}
-	else_if = {
-		limit = { 
-			root = { has_materialist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "mfmo_origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = ethic_materialist
-				ethic = "ethic_fanatic_materialist"
-				ethic = "ethic_militarist"
+		1 = {#auth-despoiler
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_barbaric_despoilers
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_2
-				establish_communications_no_message = root
-			}
-		}
-	}
-	else_if = {
-		limit = { 
-			root = { has_materialist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "mfmo_origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = "ethic_authoritarian"
-				ethic = "ethic_fanatic_authoritarian"
-				ethic = "ethic_militarist"
-			}
-			effect = {
-				save_event_target_as = fed_member_2
-				establish_communications_no_message = root
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_fanatic_authoritarian	
+					ethic = ethic_militarist
+				}
+				civics= {
+					civic = civic_barbaric_despoilers
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_2
+					establish_communications_no_message = root
+				}
 			}
 		}
-	}
-	else_if = {
-		limit = { 
-			root = { is_egalitarian = yes }
-		}
-		limit = { 
-			root = { has_materialist_government = yes }
-		}
-		create_country = {
-			name_list = random
-			species = root
-			type = default
-			origin = "mfmo_origin_raiders_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = "ethic_egalitarian"
-				ethic = "ethic_fanatic_egalitarian"
-				ethic = "ethic_militarist"
+		1 = {#materialist-warrior
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_warrior_culture
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_2
-				establish_communications_no_message = root
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_fanatic_materialist
+					ethic = ethic_militarist
+				}
+				civics= {
+					civic = civic_warrior_culture
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_2
+					establish_communications_no_message = root
+				}
 			}
 		}
-	}
-	else = {
-		create_country = {
-			name_list = random
-			species = event_target:fed_planet_1_species
-			type = default
-			origin = "mfmo_origin_common_ground_npc"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = "ethic_xenophile"
-				ethic = "ethic_xenophobe"
-				ethic = "ethic_fanatic_militarist"
+		1 = {#materialist-despoiler
+
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_barbaric_despoilers
+				}
 			}
-			effect = {
-				save_event_target_as = fed_member_2
-				establish_communications_no_message = root
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_fanatic_materialist
+					ethic = ethic_militarist
+				}
+				civics= {
+					civic = civic_barbaric_despoilers
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_2
+					establish_communications_no_message = root
+				}
+			}
+		}
+		1 = {#xenophobe-warrior
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_warrior_culture
+				}
+			}
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_fanatic_xenophobe
+					ethic = ethic_militarist
+				}
+				civics= {
+					civic = civic_warrior_culture
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_2
+					establish_communications_no_message = root
+				}
+			}
+		}
+		1 = {#auth-despoiler
+
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_barbaric_despoilers
+				}
+			}
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_fanatic_authoritarian	
+					ethic = ethic_xenophobe
+				}
+				civics= {
+					civic = civic_barbaric_despoilers
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_2
+					establish_communications_no_message = root
+				}
+			}
+		}
+		1 = {#spiritual-warrior
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_warrior_culture
+				}
+			}
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_fanatic_spiritualist
+					ethic = ethic_militarist
+				}
+				civics= {
+					civic = civic_warrior_culture
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_2
+					establish_communications_no_message = root
+				}
+			}
+		}
+		1 = {#auth-despoiler
+
+			modifier = {
+				add = 2
+				root={
+					has_civic = civic_barbaric_despoilers
+				}
+			}
+			create_country = {
+				name_list = random
+				species = root
+				type = default
+				origin = "mfmo_origin_raiders_npc"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				ethos={
+					ethic = ethic_fanatic_spiritualist
+					ethic = ethic_militarist
+				}
+				civics= {
+					civic = civic_barbaric_despoilers
+					civic = random
+				}
+				effect = {
+					save_event_target_as = fed_member_2
+					establish_communications_no_message = root
+				}
 			}
 		}
 	}

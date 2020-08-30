@@ -10,7 +10,7 @@ event = {
 		# Common Ground & Hegemon
 		every_playable_country = {
 			limit = { 
-					has_origin = mfmo_origin_raiders
+				has_origin = mfmo_origin_raiders
 			}
 			country_event = { id = mfmo_origin.1 }
 		}

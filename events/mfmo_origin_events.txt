@@ -1,7 +1,6 @@
 
 namespace = mfmo_origin
 
-# Common Ground/Hegemon Setup
 country_event = {
 	id = mfmo_origin.1
 	hide_window = yes
@@ -159,16 +158,6 @@ country_event = {
 		# First Member
 		event_target:fed_planet_1 = {
 			solar_system = { generate_home_system_resources = yes }
-			create_species = {
-				name = random
-				class = random_non_machine
-				portrait = random
-				traits = random
-				homeworld = this
-				effect = {
-					save_event_target_as = fed_planet_1_species
-				}
-			}
 			create_raider_member_1 = yes
 			create_colony = {
 				owner = event_target:fed_member_1
@@ -195,16 +184,6 @@ country_event = {
 		# Second Member
 		event_target:fed_planet_2 = {
 			solar_system = { generate_home_system_resources = yes }
-			create_species = {
-				name = random
-				class = random_non_machine
-				portrait = random
-				traits = random
-				homeworld = this
-				effect = {
-					save_event_target_as = fed_planet_2_species
-				}
-			}
 			create_raider_member_2 = yes
 			create_colony = {
 				owner = event_target:fed_member_2
@@ -232,6 +211,10 @@ country_event = {
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
 			join_alliance = { who = root override_requirements = yes }
+			add_opinion_modifier = {
+				who = root
+				modifier = mfmo_opinion_clan_tension
+			}
 			set_name = random # Fixes some naming issues
 		}
 		event_target:fed_member_2 = {
@@ -239,11 +222,15 @@ country_event = {
 			country_event = { id = game_start.9 }
 			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
 			join_alliance = { who = root override_requirements = yes }
-			set_name = random # Fixes some naming issues
+			set_name = random # Fixes some naming issues			
+			add_opinion_modifier = {
+				who = root
+				modifier = mfmo_opinion_clan_tension
+			}
 		}
 		federation = {
 			set_federation_type = military_federation
-			set_name = random
+			set_name = mfmo_clan_federation_name
 			set_federation_law = succession_term_years_20
 		}
 		set_federation_leader = root

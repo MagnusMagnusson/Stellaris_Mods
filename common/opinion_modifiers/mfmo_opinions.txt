@@ -1,0 +1,5 @@
+mfmo_opinion_clan_tension = {
+	opinion = {
+		base = -25
+	}
+}
