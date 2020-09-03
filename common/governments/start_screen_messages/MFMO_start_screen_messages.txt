@@ -1,8 +1,17 @@
 part = {
 	location = 0
-	localization = "mfmo_START_SCREEN_SHOULDERS_OF_GIANTS"
+	localization = "mfmo_START_SCREEN_RAIDING_CLANS"
 	
 	trigger = {
 		has_origin = mfmo_origin_raiders
+	}
+}
+
+part = {
+	location = 0
+	localization = "mfmo_START_SCREEN_ARCHIMEDES"
+	
+	trigger = {
+		has_origin = mfmo_origin_archimedes
 	}
 }

@@ -1,0 +1,222 @@
+
+
+
+archimedes_give_random_engineering = {
+	random_list={
+		2 = {
+			give_technology = {
+				tech = tech_corvette_build_speed
+			}
+		}		
+		2 = {
+			give_technology = {
+				tech = tech_corvette_hull_1
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_strike_craft_1
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_engineering_1
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_mass_drivers_2
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_missiles_2
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_ship_armor_2
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_afterburners_1
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_space_mining_1
+			}
+		}		
+		2 = {
+			give_technology = {
+				tech = tech_mining_1
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_powered_exoskeletons
+			}
+		}		
+		2 = {
+			give_technology = {
+				tech = tech_robomodding
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_engineering_1
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_assembly_pattern
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_starbase_3
+			}
+		}
+		1 = {
+			give_technology = {
+				tech = tech_destroyers
+			}
+		}		
+		1 = {
+			give_technology = {
+				tech = tech_thrusters_2
+			}
+		}
+		1 = {
+			give_technology = {
+				tech = tech_micro_replicators
+			}
+		}
+	}
+}
+
+archimedes_give_random_society = {
+	random_list = {
+		2 = {
+			give_technology = {
+				tech = tech_society_1
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_hydroponics
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_ground_defense_planning
+			}
+		}		
+		2 = {
+			give_technology = {
+				tech = tech_planetary_unification
+			}
+		}	
+		1 = {
+			give_technology = {
+				tech = tech_doctrine_fleet_size_1
+			}
+		}		
+		1 = {
+			give_technology = {
+				tech = tech_interstellar_fleet_traditions
+			}
+		}		
+		1 = {
+			give_technology = {
+				tech = tech_doctrine_navy_size_1
+			}
+		}		
+		1 = {
+			give_technology = {
+				tech = tech_centralized_command
+			}
+		}		
+		1 = {
+			give_technology = {
+				tech = tech_galactic_ambitions
+			}
+		}		
+		1 = {
+			give_technology = {
+				tech = tech_adaptive_combat_algorithms
+			}
+		}
+	}
+}
+
+archimedes_give_random_physics = {
+	random_list = {
+		2 = {
+			give_technology = {
+				tech = tech_space_science_1
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_physics_1
+			}
+		}		
+		2 = {
+			give_technology = {
+				tech = tech_administrative_ai
+			}
+		}		
+		2 = {
+			give_technology = {
+				tech = tech_automated_exploration
+			}
+		}	
+		2 = {
+			give_technology = {
+				tech = tech_fusion_power
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_shields_2
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_power_plant_2
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_power_hub_1
+			}
+		}
+		2 = {
+			give_technology = {
+				tech = tech_lasers_2
+			}
+		}
+		1 = {
+			give_technology = {
+				tech = tech_sensors_2
+			}
+		}
+		1 = {
+			give_technology = {
+				tech = tech_hyper_drive_2
+			}
+		}
+		1 = {
+			give_technology = {
+				tech = tech_ftl_inhibitor
+			}
+		}
+		1 = {
+			give_technology = {
+				tech = tech_volatile_motes
+			}
+		}
+	}
+}

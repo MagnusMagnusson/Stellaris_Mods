@@ -491,3 +491,26 @@ create_raider_member_2 = {
 		}
 	}
 }
+
+create_archimedes = {
+	create_country = {
+		name = "Archimedes"
+		species = event_target:archimedes_species
+		type = default
+		origin = mfmo_origin_archimedes_npc
+		ignore_initial_colony_error = yes
+		day_zero_contact = no
+		authority = auth_machine_intelligence
+		ethos={
+			ethic = ethic_gestalt_consciousness
+		}
+		civics= {
+			civic = civic_machine_introspective
+			civic = civic_machine_predictive_analysis
+		}
+		effect = {
+			save_event_target_as = archimedes
+			establish_communications_no_message = root
+		}
+	}
+}

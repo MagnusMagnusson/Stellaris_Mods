@@ -1,7 +1,7 @@
 spriteTypes = {
 		spriteType = {	
 		name = GFX_origin_raiders
-		texturefile = "gfx\\interface\\event_pictures\\origins\\origin_raiders.dds"
+		texturefile = "gfx\interface\event_pictures\origins\origin_raiders.dds"
 		alwaystransparent = yes
 		} 
 }

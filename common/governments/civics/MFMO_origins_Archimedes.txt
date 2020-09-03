@@ -1,0 +1,52 @@
+mfmo_origin_archimedes = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_hegemon.dds"
+	picture = GFX_origin_raiders
+	max_once_global = yes
+
+	playable = {
+		host_has_dlc = "Federations"
+	}
+
+	possible = {
+		ethics = {
+			NOT = { value = ethic_xenophobe }
+			NOT = { value = ethic_fanatic_xenophobe }
+			NOT = { value = ethic_fanatic_spiritualist }
+		}
+		authority={
+			NOT={
+				value = auth_machine_intelligence
+			}
+		}
+	}
+
+	description = mfmo_origin_tooltip_archimedes_effects
+	flags = { custom_start_screen }
+
+	traits = {
+	}
+
+	random_weight = {
+		base = 2
+	}
+}
+
+mfmo_origin_archimedes_npc = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_hegemon.dds"
+	picture = GFX_origin_raiders
+
+	playable = {
+		always = no # Non-player origin
+	}
+
+	possible = {
+	}
+
+	description = "mfmo_origin_tooltip_archimedes_npc_effects"
+
+	random_weight = {
+		base = 0
+	}
+}

@@ -7,12 +7,17 @@ event = {
 	is_triggered_only = yes
 
 	immediate = {
-		# Common Ground & Hegemon
 		every_playable_country = {
 			limit = { 
 				has_origin = mfmo_origin_raiders
 			}
 			country_event = { id = mfmo_origin.1 }
+		}
+		every_playable_country = {
+			limit = { 
+				has_origin = mfmo_origin_archimedes
+			}
+			country_event = { id = mfmo_origin.2 }
 		}
 	}
 }

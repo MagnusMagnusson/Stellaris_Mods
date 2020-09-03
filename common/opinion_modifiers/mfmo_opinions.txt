@@ -3,3 +3,9 @@ mfmo_opinion_clan_tension = {
 		base = -25
 	}
 }
+
+mfmo_opinion_archimedes_partner = {
+	opinion = {
+		base = 100
+	}
+}

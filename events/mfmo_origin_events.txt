@@ -236,3 +236,149 @@ country_event = {
 		set_federation_leader = root
 	}
 }
+
+
+country_event = {
+	id = mfmo_origin.2
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = first_contact_event
+		set_country_flag = Story2 # Already encountered spacefarers
+		add_tradition = tr_diplomacy_adopt
+		add_tradition = tr_diplomacy_the_federation
+
+		if = {
+			limit = { num_guaranteed_colonies >= 1 }
+			capital_scope = {
+				solar_system = {
+					closest_system = {
+						limit = { has_star_flag = neighbor_t1_first_colony }
+						random_system_planet = {
+							limit = { has_planet_flag = prescripted_ideal }
+							save_event_target_as = fed_planet_1
+							federation_origin_planet_setup = yes
+						}
+					}
+					closest_system = {
+						limit = {
+							NOT = { has_star_flag = neighbor_t1_first_colony }
+							has_owner = no
+							any_system_planet = {
+								is_ringworld = no
+								is_asteroid = no
+								is_star = no
+								is_moon = no
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { num_guaranteed_colonies = 0 }
+			capital_scope = {
+				solar_system = {
+					closest_system = {
+						limit = { has_owner = no }
+						set_star_flag = fed_origin_system_1
+						if = {
+							limit = {
+								any_system_planet = { habitable_planet = yes }
+							}
+							random_system_planet = {
+								limit = { habitable_planet = yes }
+								save_event_target_as = fed_planet_1
+								set_planet_size = 16
+								change_pc = pc_machine
+							}
+						}
+						else = {
+							random_system_planet = {
+								limit = {
+									is_ringworld = no
+									is_asteroid = no
+									is_star = no
+									is_moon = no
+								}
+								save_event_target_as = fed_planet_1
+								change_pc = pc_machine
+								set_planet_size = 16
+								federation_origin_planet_setup = yes
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+
+		# First Member
+		event_target:fed_planet_1 = {
+			change_pc = pc_machine
+			set_planet_size = 16
+			solar_system = { generate_home_system_resources = yes }
+			create_species = {
+				name = mfmo_local_archimedes_bot
+				class = MACHINE
+				portrait = random
+				traits = {
+					trait = trait_robot_efficient_processors
+					trait = trait_robot_logic_engines
+					trait = trait_robot_luxurious
+					trait = trait_robot_custom_made
+				}
+				homeworld = this
+				effect = {
+					save_event_target_as = archimedes_species
+				}
+			}
+			create_archimedes = yes
+			
+			create_colony = {
+				owner = event_target:archimedes
+			}
+			generate_start_deposits_and_blockers = yes
+			generate_start_buildings_and_districts = yes
+			generate_start_pops = yes
+			solar_system = {
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:archimedes
+					effect = {
+					}
+				}
+			}
+		}
+		event_target:archimedes = {
+			create_starting_leaders = yes
+			country_event = { id = game_start.9 }
+			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			join_alliance = { who = root override_requirements = yes }
+			add_opinion_modifier = {
+				who = root
+				modifier = mfmo_opinion_archimedes_partner
+			}
+			archimedes_give_random_engineering = yes
+			archimedes_give_random_society = yes
+			archimedes_give_random_physics = yes
+		}
+		root = {
+			add_opinion_modifier = {
+				who = event_target:archimedes
+				modifier = mfmo_opinion_archimedes_partner
+			}
+		}
+		federation = {
+			set_federation_type = research_federation
+			set_name = random
+			set_federation_law = succession_term_years_20
+		}
+		set_federation_leader = root
+	}
+}
