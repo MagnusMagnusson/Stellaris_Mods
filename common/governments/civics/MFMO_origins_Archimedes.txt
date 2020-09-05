@@ -1,7 +1,7 @@
 mfmo_origin_archimedes = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_hegemon.dds"
-	picture = GFX_origin_raiders
+	picture = GFX_mfmo_origin_archimedes
 	max_once_global = yes
 
 	playable = {

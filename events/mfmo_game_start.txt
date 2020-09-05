@@ -19,5 +19,11 @@ event = {
 			}
 			country_event = { id = mfmo_origin.2 }
 		}
+		every_playable_country = {
+			limit = { 
+				has_origin = mfmo_origin_strange_family
+			}
+			country_event = { id = mfmo_origin.3 }
+		}
 	}
 }

@@ -382,3 +382,48 @@ country_event = {
 		set_federation_leader = root
 	}
 }
+
+
+
+country_event = {
+	id = mfmo_origin.3
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_pop = {
+			set_pop_flag = "mfmo_original_pop"
+		}
+		while = {
+			count = 20
+			random_country = {
+				ROOT = {
+					capital_scope = {
+						create_pop = {
+							species = PREVPREV.species
+						}
+					}
+				}
+			}
+		}
+		while = {
+			count = 4
+			random_owned_pop = {			
+				limit={
+					NOT={has_pop_flag="mfmo_not_killed"}
+					has_pop_flag="mfmo_original_pop"
+				}
+				set_pop_flag = "mfmo_not_killed"
+			}
+		}
+
+		every_owned_pop = {
+			limit={
+				NOT={has_pop_flag="mfmo_not_killed"}
+				has_pop_flag="mfmo_original_pop"
+			}
+			kill_pop = yes
+		}
+	}
+}

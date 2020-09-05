@@ -1,7 +1,17 @@
 spriteTypes = {
-		spriteType = {	
-		name = GFX_origin_raiders
+	spriteType = {	
+		name = GFX_mfmo_origin_raiders
 		texturefile = "gfx\interface\event_pictures\origins\origin_raiders.dds"
+		alwaystransparent = yes
+		} 		
+	spriteType = {	
+		name = GFX_mfmo_origin_big_tent
+		texturefile = "gfx\interface\event_pictures\origins\origin_big_tent.dds"
+		alwaystransparent = yes
+		} 	
+	spriteType = {	
+		name = GFX_mfmo_origin_archimedes
+		texturefile = "gfx\interface\event_pictures\origins\origin_mfmo_archimedes_touched.dds"
 		alwaystransparent = yes
 		} 
 }
