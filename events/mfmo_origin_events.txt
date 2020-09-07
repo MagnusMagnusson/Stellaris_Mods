@@ -427,3 +427,187 @@ country_event = {
 		}
 	}
 }
+
+
+
+country_event = {
+	id = mfmo_origin.4
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = first_contact_event
+		set_country_flag = Story2 # Already encountered spacefarers
+
+
+		capital_scope = {
+			solar_system = {
+				closest_system = { #Find a "origin" star for ae
+					limit={
+						has_owner = no
+					}
+					min_steps = 4
+					max_steps = 8
+
+					set_star_flag = ae_empire_star
+					while={
+						count = 4
+						closest_system = {
+							limit = {
+								has_owner = no
+								NOT={has_star_flag = ae_empire_star}
+							}
+							set_star_flag = ae_empire_star
+						}
+					}
+				}
+			}
+		}
+		random_system = {
+			limit = {has_star_flag=ae_empire_star}
+			if={
+				limit = {
+					any_system_planet = { habitable_planet = yes }
+				}
+				random_system_planet = {
+					limit = { habitable_planet = yes }
+					save_event_target_as = ae_capital
+					set_planet_size = 16
+				}
+			} else = {
+				random_system_planet = {
+					limit = {
+						is_ringworld = no
+						is_asteroid = no
+						is_star = no
+						is_moon = no
+					}
+					save_event_target_as = ae_capital
+				}
+			}
+		}
+		
+
+		# First Member
+		event_target:ae_capital = {
+			solar_system = { generate_home_system_resources = yes }
+
+			create_ae_empire = yes
+			change_pc = pc_tropical
+			set_planet_size = 16			
+			create_species = {
+				name = random
+				class = random_non_machine
+				portrait = random
+				homeworld = this
+				effect = {
+					save_event_target_as = ae_empire_species
+				}
+			}
+			create_colony = {
+				owner = event_target:ae_empire_nation
+			}
+			generate_start_deposits_and_blockers = yes
+			generate_start_buildings_and_districts = yes
+			generate_start_pops = yes
+			solar_system = {
+				create_starbase = {
+					size = starbase_starport
+					module = shipyard
+					building = crew_quarters
+					owner = event_target:ae_empire_nation
+					effect = {
+						set_starbase_module = {
+							slot = 1
+							module = anchorage
+						}
+					}
+				}
+			}
+		}
+		create_fleet = {
+			name = random
+			effect = { 
+				set_owner = event_target:ae_empire_nation
+				while={
+					count = 9
+					create_ship = {
+						name = random
+						random_existing_design = corvette
+					}
+				}
+				while={
+					count = 1
+					create_ship = {
+						name = random
+						random_existing_design = cruiser
+					}
+				}
+			}
+		}
+		event_target:ae_empire_nation = {
+			create_starting_leaders = yes
+			country_event = { id = game_start.9 }
+			country_event = { id = game_start.33 days = 1 } # needs delay for system ownership to settle
+			set_name = random # Fixes some naming issues
+			give_ae_tech = yes
+			add_resource = {
+				minerals = 5000
+				food = 1000
+				energy = 10000
+				alloys = 5000
+				consumer_goods = 5000
+			}
+			every_system = {
+				limit={
+					has_star_flag = ae_empire_star
+					has_owner = no
+				}
+				create_starbase = {
+					size = starbase_outpost
+					owner = event_target:ae_empire_nation
+				}
+				every_system_planet = {
+					limit={
+						habitable_planet = yes
+						is_capital = no
+					}
+					create_colony = {
+						owner = event_target:ae_empire_nation
+					}
+					change_pc = pc_arid
+					while={
+						count = 11
+						create_pop = {
+							species = event_target:ae_empire_species
+						}
+					}
+					add_district = district_city
+					add_district = district_mining
+					add_district = district_generator
+					add_district = district_farming
+					add_building = building_hydroponics_farm
+					add_building = building_bureaucratic_1
+				}
+				every_system_planet = {
+					limit={
+						habitable_planet = no
+						
+					}
+					create_mining_station = {
+						owner = event_target:ae_empire_nation
+					}
+				}
+			}
+		}
+		set_subject_of = {
+			who = event_target:ae_empire_nation
+			subject_type = protectorate
+		}
+		add_opinion_modifier = {
+			who = event_target:ae_empire_nation
+			modifier = opinion_enlightened_us
+		}
+	}
+}

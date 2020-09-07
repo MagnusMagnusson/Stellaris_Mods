@@ -25,3 +25,6 @@ mfmo_origin_strange_family_desc: "This civilization has, trough unexplainable an
 mfmo_origin_tooltip_strange_family_effects: "Start with §Y4 guaranteed pops§! of your main species. The other §Y20 starting pops§! on your home planet are randomly selected from the primary species of other empires found across the galaxy."
 mfmo_tooltip_xenophobe: "Not Xenophobic"
 mfmo_tooltip_authoritarian: "Not Authoritarian"
+mfmo_origin_enlightened: "Enlightened"
+mfmo_origin_enlightened_desc: "This civilization has been enlightened by an advanced empire who provided them with the technologies required to traverse the galaxy. While it may seem daunting to start off the interstellar journey in the shadow of such a powerful neighbour, being allowed to participate no small opportunity. "
+mfmo_origin_tooltip_enlightened_effects: "Start as the vassal of an §YEgalitarian Advanced Empire§!."

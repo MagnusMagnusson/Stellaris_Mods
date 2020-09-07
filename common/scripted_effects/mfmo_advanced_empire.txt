@@ -1,0 +1,65 @@
+create_ae_empire = {
+	create_country = {
+		name = random
+		species = event_target:ae_empire_species
+		type = default
+		origin = origin_default
+		ignore_initial_colony_error = yes
+		ethos={
+			ethic = ethic_egalitarian
+			ethic = random
+			ethic = random
+		}
+		civics= {
+			civic = random
+			civic = random
+		}
+		effect = {
+			save_event_target_as = ae_empire_nation
+			establish_communications_no_message = root
+		}
+	}	
+	
+}
+
+give_ae_tech = {
+	give_technology = {
+		tech = tech_corvette_build_speed
+	}
+	give_technology = {
+		tech = tech_strike_craft_1
+	}
+	give_technology = {
+		tech = tech_alloys_1
+	}
+	give_technology = {
+		tech = tech_engineering_1
+	}
+	give_technology = {
+		tech = tech_starbase_2
+	}	
+	give_technology = {
+		tech = tech_basic_science_lab_1
+	}
+	give_technology = {
+		tech = tech_space_science_1
+	}	
+	give_technology = {
+		tech = tech_physics_1
+	}
+	give_technology = {
+		tech = tech_cryostasis_1
+	}
+	give_technology = {
+		tech = tech_space_trading
+	}
+	give_technology = {
+		tech = tech_eco_simulation
+	}
+	give_technology = {
+		tech = tech_hydroponics
+	}
+	give_technology = {
+		tech = tech_planetary_unification
+	}
+}

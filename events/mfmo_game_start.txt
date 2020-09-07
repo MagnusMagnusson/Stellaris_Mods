@@ -25,5 +25,17 @@ event = {
 			}
 			country_event = { id = mfmo_origin.3 }
 		}
+		every_playable_country = {
+			limit = { 
+				has_origin = mfmo_origin_enlightened
+			}
+			country_event = { id = mfmo_origin.4 }
+		}
+		every_playable_country = {
+			limit = { 
+				has_origin = mfmo_origin_fanatic_federalist
+			}
+			country_event = { id = mfmo_origin.5 }
+		}
 	}
 }

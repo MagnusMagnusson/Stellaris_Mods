@@ -28,7 +28,7 @@ mfmo_origin_archimedes = {
 	}
 
 	random_weight = {
-		base = 2
+		base = 1
 	}
 }
 
